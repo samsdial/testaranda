@@ -18,7 +18,7 @@ const App: FC = () => {
     const { loading, data } = useSelector(state => state.posts)
 
     return (
-        <Container className="py-2">
+        <Container className="py-2 w-auto">
             {loading ? <Loader /> : data &&  
                 <PostFilter items={data} />
             }

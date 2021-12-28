@@ -42,11 +42,11 @@ const PostFilter: React.FC<PostFilterProps> = ({items}) => {
     return (
         <Fragment>
             <Row>
-                <Col xs={12} className="mb-5">
+                <Col xs={12} className="my-5">
                     <div className="d-flex align-items-center">
                     <H5 className="mb-0 mr-5">Buscar Twit:</H5>
                     <InputGroup className="w-75 group-search">
-                        <Input className="group-search-input" type="text" placeholder="Buscar..." value={searchTwit} onChange={e => handleChange(e.target.value)}/>
+                        <Input pattern="[#]" className="group-search-input" type="text" placeholder="Buscar..." value={searchTwit} onChange={e => handleChange(e.target.value)}/>
                         <InputGroupAddon className="group-search-addon">
                             <BiSearchAlt />
                         </InputGroupAddon>

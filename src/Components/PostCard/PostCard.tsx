@@ -17,6 +17,7 @@ import { FaTwitter } from 'react-icons/fa';
 import { IoIosShareAlt } from 'react-icons/io';
 import { AiOutlineRetweet, AiFillStar } from 'react-icons/ai';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { MdKeyboardArrowUp } from 'react-icons/md';
 import Post from '../../models/postModels'
 
 interface PostProps {
@@ -31,9 +32,9 @@ const PostCard: React.FC<PostProps> = (props) => {
     const img = "https://picsum.photos/200/300"
     const atSing = "Alterno"
     const hour = "22:00"
-    const date = ""
-    const comment = ""
-    const url = ""
+    const date = "28 Dic 2021"
+    const comment = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero nesciunt magnam rerum? A, quis perferendis!"
+    const url = "https://www.google.com/"
 
     function handleClick() {
         setIsOpen(!isOpen);
@@ -43,10 +44,10 @@ const PostCard: React.FC<PostProps> = (props) => {
         <div className="item">
             <Card id={`card-${id}`}>
                 <Ul className="d-flex flex-row align-items-center">
-                    <Li>
+                    <Li> 
                         <CardImg src={img} className="img-fluid rounded" alt="card image"/>
                     </Li>
-                    <Li>
+                    <Li className="py-2 pr-2">
                         <CardTitle>{title}</CardTitle>
                         <CardSubtitle>@{atSing}</CardSubtitle>
                     </Li>
@@ -59,13 +60,19 @@ const PostCard: React.FC<PostProps> = (props) => {
                 <CardBlock className="mb-5">
                     <Ul className="d-flex align-items-center">
                         <Li className="flex-fill text-center">
-                            <IoIosShareAlt />
+                            <A>
+                                <IoIosShareAlt />
+                            </A>
                         </Li>
                         <Li className="flex-fill text-center">
-                            <AiOutlineRetweet />
+                            <A>
+                                <AiOutlineRetweet />
+                            </A>
                         </Li>
                         <Li className="flex-fill text-center">
-                            <AiFillStar />
+                            <A>
+                                <AiFillStar />
+                            </A>
                         </Li>
                     </Ul>
                 </CardBlock>
@@ -85,11 +92,15 @@ const PostCard: React.FC<PostProps> = (props) => {
                         <CardText>
                             {comment}
                             <br />
-                            {url}
+                            <A className="link" href={url}>
+                                {url}
+                            </A>
                         </CardText>
                     </div>
                     <div className="d-block w-100 text-right">
-                        <A className="d-block cl-white mt-4" onClick={handleClick}>...Mas <MdKeyboardArrowDown /></A>
+                        <A className="d-block btn-more mt-4" onClick={handleClick}>
+                            {isOpen ? (<span>...Mas <MdKeyboardArrowDown /></span>) : (<MdKeyboardArrowUp />)}
+                            </A>
                     </div>
                 </CardBlock>
             </Card>

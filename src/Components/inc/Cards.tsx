@@ -72,6 +72,13 @@ const CardEntity = styled(
             height: 50px;
             margin: 12px;
         }
+        .link {
+            color: #FFFFFF !important;
+        }
+        .btn-more {
+            color: #FFFFFF !important;
+            font-weight: bold;
+        }
         .card{
             &-title {
                 color: #808080; 
